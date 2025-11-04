@@ -3,121 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syed Shahjahan Shah – Portfolio</title>
+  <title>Syed Shahjahan Shah | Portfolio</title>
+  <meta name="description" content="Syed Shahjahan Shah — Front-End Developer & Creative Designer. Modern, responsive portfolio showcasing web, graphic and printing projects." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="index.html">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Syed Shahjahan Shah | Portfolio" />
+  <meta property="og:description" content="Front-End Developer & Creative Designer. Modern, responsive portfolio showcasing web, graphic and printing projects." />
+  <meta property="og:image" content="image.png" />
+  <meta property="og:url" content="index.html" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- JSON-LD (basic Person/Portfolio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Syed Shahjahan Shah",
+    "jobTitle": "Front-End Developer & Creative Designer",
+    "url": "index.html",
+    "sameAs": ["#"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    }
+  }
+  </script>
 </head>
-
 <body>
-  <!-- Landing Section -->
-  <section class="landing">
-    <img src="image.png" alt="Background" class="bg">
+  <header>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="logo">Syed<span>Shahjahan</span></div>
+      <button id="navToggle" class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">☰</button>
+      <ul id="primary-navigation" class="nav-links" data-visible="false">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="socials">
+        <a href="#" target="_blank"><i class="ri-instagram-line"></i></a>
+        <a href="#" target="_blank"><i class="ri-linkedin-box-line"></i></a>
+        <a href="#" target="_blank"><i class="ri-github-line"></i></a>
+        <a href="#" target="_blank"><i class="ri-behance-line"></i></a>
+      </div>
+      <button id="modeToggle" aria-pressed="false">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/image.png" alt="Background" class="bg" />
     <div class="glass">
       <h1>Syed Shahjahan Shah</h1>
-      <p>Graphic Designer | Frontend Developer | Content Creater</p>
-      <button class="btn" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
-        Discover My Work
-      </button>
-      <button class="btn-outline" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-        View My Services
-      </button>
+      <p class="tagline">Front-End Developer | Creative Designer</p>
+      <div class="cta-row">
+        <button class="btn" id="discoverBtn" data-target="#projects">Discover My Work</button>
+        <button class="btn" id="servicesBtn" data-target="#services">View My Services</button>
+      </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="section about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I’m a multidisciplinary designer and developer passionate about creative visuals, printing, and building web experiences that inspire.
-      I craft meaningful designs, manage print campaigns, and develop engaging digital platforms.
-    </p>
+  <main id="main">
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m a passionate front-end developer focused on creating modern, responsive, and user-friendly designs that stand out.</p>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="section services">
-    <h2 class="section-title">Services</h2>
-    <div class="service-container">
-      <a href="graphics.html" class="service-card">
-        <h3>🎨 Graphic Designing</h3>
-        <p>Logos, brand identity, posters, and social media creatives that stand out.</p>
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <div class="cards-grid services-grid">
+      <a class="service-card" href="web.html" aria-label="Open web development services">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/portfolio.webp">
+            <img src="portfolio.jpg" alt="Web Development example" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Web Design</h3>
+            <p class="card-sub">Modern, responsive websites built for performance and style.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Web</span>
+            <span class="card-sub">HTML · CSS · JS</span>
+          </div>
+        </div>
       </a>
-      <a href="printing.html" class="service-card">
-        <h3>🖨️ Printing</h3>
-        <p>Premium quality prints for cards, banners, merchandise, and packaging.</p>
-      </a>
-      <a href="web.html" class="service-card">
-        <h3>💻 Web Development</h3>
-        <p>Responsive, fast, and modern websites using HTML, CSS, and JavaScript.</p>
-      </a>
-    </div>
-  </section>
 
-  <!-- Printing Highlight Section -->
-  <section id="printing" class="section printing-highlight">
-    <h2 class="section-title">Printing by Pritify Studio</h2>
-    <p>Explore my professional printing catalog — powered by Pritify Studio.</p>
-    <div class="print-preview">
-      <img src="cards.jpg" alt="Business Cards Preview">
-      <img src="banners.jpg" alt="Banners Preview">
-      <img src="flyers.jpg" alt="Flyers Preview">
-    </div>
-    <a href="https://pritifystudio.pk" class="btn" target="_blank">Visit Full Printing Site</a>
-  </section>
-
-  <!-- Reels -->
-  <section id="reels" class="reels-section">
-    <h2>Content Creation Reels</h2>
-    <div class="reels">
-      <video controls class="reel-video">
-        <source src="0925(1).mp4" type="video/mp4">
-      </video>
-      <video controls class="reel-video">
-        <source src="0904(3).mp4" type="video/mp4">
-      </video>
-      <video controls class="reel-video">
-        <source src="khtm e nabuwat .mp4" type="video/mp4">
-      </video>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="project-container">
-      <a href="project1.html" class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>My personal interactive portfolio built with GSAP animations.</p>
+      <a class="service-card" href="printing.html" aria-label="Open printing services">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/cards.webp">
+            <img src="cards.jpg" alt="Printing services example" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Printing & Merchandise</h3>
+            <p class="card-sub">Business cards, banners, flyers and high-quality print solutions.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Print</span>
+            <span class="card-sub">Banners · Flyers · Merch</span>
+          </div>
+        </div>
       </a>
-      <a href="project2.html" class="project-card">
-        <h3>Brand Design Kit</h3>
-        <p>Complete brand identity for a printing & design agency.</p>
-      </a>
-      <a href="project3.html" class="project-card">
-        <h3>Social Media Campaign</h3>
-        <p>Viral content strategy and designs for digital platforms.</p>
+
+      <a class="service-card" href="graphic.html" aria-label="Open graphic design services">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/branding.webp">
+            <img src="branding.png" alt="Graphic design example" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Graphic Designing</h3>
+            <p class="card-sub">Logo, branding and social media creatives that communicate your message.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Branding</span>
+            <span class="card-sub">Logo · Social · Visuals</span>
+          </div>
+        </div>
       </a>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title">Let’s Work Together</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="cards-grid projects-grid">
+      <a class="project-card" href="project1.html" aria-label="Open Portfolio Website project">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/portfolio1.webp">
+            <img src="portfolio1.jpg" alt="Portfolio Website screenshot" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Portfolio Website</h3>
+            <p class="card-sub">A clean portfolio built with HTML, CSS, JS and GSAP animations.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Case Study</span>
+            <span class="card-sub">UX · Animation</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="project2.html" aria-label="Open Business Landing Page project">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/brand1.webp">
+            <img src="brand1.jpg" alt="Business Landing Page screenshot" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Business Landing Page</h3>
+            <p class="card-sub">High-converting landing pages focused on clarity and conversion.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Landing</span>
+            <span class="card-sub">Conversion · CRO</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="project3.html" aria-label="Open Custom Web Solutions project">
+        <div class="card-figure">
+          <picture>
+            <source type="image/webp" srcset="images/webp/social1.webp">
+            <img src="social1.jpg" alt="Custom Web Solutions screenshot" loading="lazy">
+          </picture>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3>Custom Web Solutions</h3>
+            <p class="card-sub">Tailored front-end projects and UI solutions for clients.</p>
+          </div>
+          <div class="card-meta">
+            <span class="badge">Custom</span>
+            <span class="card-sub">UI · Integrations</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Want to work together? Send a message — or email me directly at <a href="mailto:you@example.com">you@example.com</a>.</p>
+    <form id="contactForm" name="contact" method="POST" action="/?sent=1" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form" aria-label="Contact form">
+      <input type="hidden" name="form-name" value="contact">
+      <!-- Honeypot for spam bots (Netlify will ignore this field) -->
+      <input type="hidden" name="bot-field" id="bot-field" />
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
       <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Shahjahan Shah | Designed & Developed by Me 💻</p>
+    <p>© 2025 Syed Shahjahan Shah. All Rights Reserved.</p>
   </footer>
-
-  <script src="main.js"></script>
+  </main>
+  <!-- Modal / preview overlay -->
+  <div id="previewModal" class="modal" aria-hidden="true" role="dialog" aria-label="Project preview">
+    <div class="modal-backdrop" data-action="close"></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close preview" data-action="close">✕</button>
+      <div class="modal-body" id="modalBody" tabindex="-1"></div>
+    </div>
+  </div>
 </body>
 </html>
